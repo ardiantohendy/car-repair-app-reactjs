@@ -13,15 +13,15 @@ const MainPage = () => {
                 SERVICE FOR YOUR CAR
               </h1>
               <p className="redOne">We Serve Better Than Any Other</p>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aperiam exercitationem facilis.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aperiam exercitationem facilis Lorem ipsum dolor sit amet.</p>
             </div>
             <div className="btn">
-              <button>Book Now</button>
+              <button className="bookBtn">Book Now</button>
               <button>Learn More</button>
             </div>
           </div>
           <div className="bot">
-            {/* <div className="listBot">
+            <div className="listBot">
               <div className="first">
                 <h2>Car Cleaning & Washing</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptas illo esse nulla rem?</p>
@@ -34,7 +34,7 @@ const MainPage = () => {
                 <h2>Repair Service & Inspections</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptas illo esse nulla rem?</p>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
