@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* HEADER STYLE */
+
+body header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: 0 3rem;
+  background-color: rgb(49, 49, 49);
+}
+
+body header .logo {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+}
+
+body header .list ul li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+body header .list ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.1s;
+}
+
+body header .list ul li a:hover {
+  color: rgba(255, 255, 255, 0.696);
+}
+
+/* HOME PAGE */
+
+body .homePage {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(./assets/image/home-page.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.content .mid .text h1 {
+  font-weight: 800;
+  font-size: 2.5em;
+  color: whitesmoke;
+}
+
+.content .mid .text p.redOne {
+  font-size: 2em;
+  font-weight: 400;
+  color: orange;
+}
+
+.content .mid .text p {
+  font-size: 1em;
+  font-weight: 400;
+  color: whitesmoke;
+}
+
+.content .mid .btn {
+  display: flex;
+}
+
+.content .mid .btn button {
+  padding: 0.2rem 0.5rem;
+}
