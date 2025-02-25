@@ -17,7 +17,14 @@ const Header = () => {
             <a href="#">Book</a>
           </li>
           <li>
-            <a href="#">Login/Register</a>
+            <a className="log" href="#">
+              Log In
+            </a>
+          </li>
+          <li>
+            <a className="reg" href="#">
+              Sign Up
+            </a>
           </li>
         </ul>
       </div>
