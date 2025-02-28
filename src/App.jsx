@@ -3,6 +3,7 @@ import AboutPage from "./components/AboutPage";
 import MainPage from "./components/MainPage";
 import ServicesPage from "./components/ServicesPage";
 import ProcessPage from "./components/ProcessPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <AboutPage />
       <ServicesPage />
       <ProcessPage />
+      <Footer />
     </>
   );
 }
