@@ -1,19 +1,16 @@
 import "./App.css";
-import AboutPage from "./components/AboutPage";
-import MainPage from "./components/MainPage";
-import ServicesPage from "./components/ServicesPage";
-import ProcessPage from "./components/ProcessPage";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Book from "./pages/Book";
 
 function App() {
   return (
-    <>
-      <MainPage />
-      <AboutPage />
-      <ServicesPage />
-      <ProcessPage />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/book" element={<Book />} />
+      </Routes>
+    </Router>
   );
 }
 

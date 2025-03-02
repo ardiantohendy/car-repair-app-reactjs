@@ -1,6 +1,7 @@
 import Header from "./Header";
-
+import { useNavigate } from "react-router-dom";
 const MainPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="homePage">
@@ -16,7 +17,9 @@ const MainPage = () => {
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aperiam exercitationem facilis Lorem ipsum dolor sit amet.</p>
             </div>
             <div className="btn">
-              <button className="bookBtn">Book Now</button>
+              <button className="bookBtn" onClick={() => navigate("/book")}>
+                Book Now
+              </button>
               <button>Learn More</button>
             </div>
           </div>

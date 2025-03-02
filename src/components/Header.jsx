@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header>
       <div className="logo">DOCTOR CAR</div>
@@ -14,7 +16,8 @@ const Header = () => {
             <a href="#">Services</a>
           </li>
           <li>
-            <a href="#">Book</a>
+            {/* UNTUK ROUTER TAG A PERLU DIGANTI KE BUTTON */}
+            <a onClick={() => navigate("/book")}>Book</a>
           </li>
           <li>
             <a className="log" href="#">

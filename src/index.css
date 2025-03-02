@@ -37,6 +37,7 @@ body header .list ul li a {
   color: white;
   transition: 0.1s;
   font-size: 0.85em;
+  cursor: pointer;
 }
 
 body header .list ul li a:hover {
