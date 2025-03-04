@@ -20,6 +20,7 @@ const BookComponent = () => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
   const [email, setEmail] = useState("");
+  const [brand, setBrand] = useState("");
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -31,6 +32,10 @@ const BookComponent = () => {
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
+  };
+
+  const handleChangeBrand = (e) => {
+    setBrand(e.target.value);
   };
 
   //   const handleChange = (e) => {
@@ -77,6 +82,22 @@ const BookComponent = () => {
             <label>Email:</label>
             <input type="text" name="email" value={email} onChange={handleChangeEmail} />
             <p>name: {email}</p>
+
+            <label htmlFor="">Brand:</label>
+            <select name="brand" value={brand} onChange={handleChangeBrand}>
+              <option value="">Select Your Car Brand</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Daihatsu">Daihatsu</option>
+              <option value="Honda">Honda</option>
+              <option value="Mitsubishi">Mitsubishi</option>
+              <option value="Nissan">Nissan</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Lexus">Lexus</option>
+              <option value="Peugeot">Peugeot</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedes">Mercedes</option>
+            </select>
+            <p>Car Brand: {brand}</p>
           </form>
         </div>
       </div>
