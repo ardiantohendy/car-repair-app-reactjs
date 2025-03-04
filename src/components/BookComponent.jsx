@@ -21,6 +21,12 @@ const BookComponent = () => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [email, setEmail] = useState("");
   const [brand, setBrand] = useState("");
+  const [model, setModel] = useState("");
+  const [carNumber, setCarNumber] = useState("");
+  const [services, setServices] = useState([]);
+  const [comment, setComment] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -36,6 +42,34 @@ const BookComponent = () => {
 
   const handleChangeBrand = (e) => {
     setBrand(e.target.value);
+  };
+
+  const handleChangeModel = (e) => {
+    setModel(e.target.value);
+  };
+
+  const handleChangeCarNumber = (e) => {
+    setCarNumber(e.target.value);
+  };
+
+  const servicesList = ["Engine Upgrade", "Inspection Service", "Engine Repair", "Body Repair", "Electricity Repair", "Tire Repair"];
+
+  const handleChangeService = (event) => {
+    const { value, checked } = event.target;
+
+    setServices((prev) => (checked ? [...prev, value] : prev.filter((service) => service !== value)));
+  };
+
+  const handleChangeComment = (e) => {
+    setComment(e.target.value);
+  };
+
+  const handleChangeDate = (e) => {
+    setDate(e.target.value);
+  };
+
+  const handleChangeTime = (e) => {
+    setTime(e.target.value);
   };
 
   //   const handleChange = (e) => {
@@ -73,15 +107,12 @@ const BookComponent = () => {
           <form>
             <label>Name:</label>
             <input type="text" name="name" value={name} onChange={handleChangeName} />
-            <p>name: {name}</p>
 
             <label>Phone Number:</label>
             <input type="text" name="phoneNumber" value={phoneNumber} onChange={handleChangePhone} />
-            <p>name: {phoneNumber}</p>
 
             <label>Email:</label>
             <input type="text" name="email" value={email} onChange={handleChangeEmail} />
-            <p>name: {email}</p>
 
             <label htmlFor="">Brand:</label>
             <select name="brand" value={brand} onChange={handleChangeBrand}>
@@ -98,6 +129,28 @@ const BookComponent = () => {
               <option value="Mercedes">Mercedes</option>
             </select>
             <p>Car Brand: {brand}</p>
+
+            <label>Model:</label>
+            <input type="text" name="model" value={model} onChange={handleChangeModel} />
+
+            <label>Car Number:</label>
+            <input type="text" name="carNumber" value={carNumber} onChange={handleChangeCarNumber} />
+
+            <div>
+              <label>Select Services</label>
+              {servicesList.map((service) => (
+                <div key={service}>
+                  <input type="checkbox" value={service} checked={services.includes(service)} onChange={handleChangeService} />
+                  <label>{service}</label>
+                </div>
+              ))}
+
+              <p>Selected Services:</p>
+              <p>{services.join(", ") || "No service selected"}</p>
+            </div>
+
+            <label>Comments:</label>
+            <textarea name="comment" value={comment} onChange={handleChangeComment} placeholder="add details of the car's problems" />
           </form>
         </div>
       </div>
@@ -136,13 +189,6 @@ const BookComponent = () => {
 
     //     <label className="block">Nomor Polisi (Plat Nomor):</label>
     //     <input type="text" name="plat" value={formData.plat} onChange={handleChange} className="w-full border p-2 rounded mb-2" required />
-
-    //     <label className="block">Jenis Servis:</label>
-    //     {["Ganti Oli", "Servis Berkala", "Perbaikan Rem", "Tune Up"].map((servis) => (
-    //       <div key={servis}>
-    //         <input type="checkbox" name="servis" value={servis} checked={formData.servis.includes(servis)} onChange={handleChange} /> {servis}
-    //       </div>
-    //     ))}
 
     //     <label className="block">Keterangan Tambahan:</label>
     //     <textarea name="keterangan" value={formData.keterangan} onChange={handleChange} className="w-full border p-2 rounded mb-2"></textarea>
