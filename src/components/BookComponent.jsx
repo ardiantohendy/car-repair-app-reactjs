@@ -92,7 +92,10 @@ const BookComponent = () => {
       <div className="bookContainer">
         <div className="left">
           <h2>Book Online For Fast Service</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ab dolorem fuga unde suscipit harum, dolore tempore voluptatibus, nobis corporis possimus ipsum corrupti, ad illo saepe sit minus eveniet quam.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ab dolorem fuga unde suscipit harum, dolore tempore voluptatibus, nobis corporis possimus ipsum corrupti, ad illo saepe sit minus eveniet quam. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. In, recusandae!
+          </p>
         </div>
         <div className="right">
           <h3>Please Fill all These Forms</h3>
