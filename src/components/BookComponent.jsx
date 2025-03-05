@@ -74,6 +74,17 @@ const BookComponent = () => {
     });
 
     alert("Booking submitted successfully!");
+
+    setName("");
+    setPhoneNumber("");
+    setEmail("");
+    setBrand("");
+    setModel("");
+    setCarNumber("");
+    setServices([]); // Karena ini array, reset dengan []
+    setComment("");
+    setDate("");
+    setTime("");
   };
 
   return (
