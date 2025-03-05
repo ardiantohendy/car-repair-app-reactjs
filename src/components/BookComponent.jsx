@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const BookComponent = () => {
   const [name, setName] = useState("");
@@ -89,6 +91,7 @@ const BookComponent = () => {
 
   return (
     <>
+      <Header />
       <div className="bookContainer">
         <div className="left">
           <h2>Book Online For Fast Service</h2>
@@ -99,40 +102,54 @@ const BookComponent = () => {
         </div>
         <div className="right">
           <h3>Please Fill all These Forms</h3>
-
           <form onSubmit={handleSubmit}>
-            <label>Name:</label>
-            <input type="text" name="name" value={name} onChange={handleChangeName} required />
+            <div className="name">
+              <label>Name:</label>
+              <input type="text" name="name" value={name} onChange={handleChangeName} required />
+            </div>
 
-            <label>Phone Number:</label>
-            <input type="text" name="phoneNumber" value={phoneNumber} onChange={handleChangePhone} required />
+            <div className="phoneandemail">
+              <div>
+                <label>Phone Number:</label>
+                <input type="text" name="phoneNumber" value={phoneNumber} onChange={handleChangePhone} required />
+              </div>
 
-            <label>Email:</label>
-            <input type="text" name="email" value={email} onChange={handleChangeEmail} required />
+              <div>
+                <label>Email:</label>
+                <input type="text" name="email" value={email} onChange={handleChangeEmail} required />
+              </div>
+            </div>
 
-            <label>Brand:</label>
-            <select name="brand" value={brand} onChange={handleChangeBrand} required>
-              <option value="">Select Your Car Brand</option>
-              <option value="Toyota">Toyota</option>
-              <option value="Daihatsu">Daihatsu</option>
-              <option value="Honda">Honda</option>
-              <option value="Mitsubishi">Mitsubishi</option>
-              <option value="Nissan">Nissan</option>
-              <option value="Hyundai">Hyundai</option>
-              <option value="Lexus">Lexus</option>
-              <option value="Peugeot">Peugeot</option>
-              <option value="BMW">BMW</option>
-              <option value="Mercedes">Mercedes</option>
-            </select>
-            <p>Car Brand: {brand}</p>
+            <div className="brand">
+              <label>Brand:</label>
+              <select name="brand" value={brand} onChange={handleChangeBrand} required>
+                <option value="">Select Your Car Brand</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Daihatsu">Daihatsu</option>
+                <option value="Honda">Honda</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Lexus">Lexus</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+              </select>
+            </div>
 
-            <label>Model:</label>
-            <input type="text" name="model" value={model} onChange={handleChangeModel} required />
+            <div className="modelandnumber">
+              <div className="model">
+                <label>Model:</label>
+                <input type="text" name="model" value={model} onChange={handleChangeModel} required />
+              </div>
 
-            <label>Car Number:</label>
-            <input type="text" name="carNumber" value={carNumber} onChange={handleChangeCarNumber} required />
+              <div className="carNumber">
+                <label>Car Number:</label>
+                <input type="text" name="carNumber" value={carNumber} onChange={handleChangeCarNumber} required />
+              </div>
+            </div>
 
-            <div>
+            <div className="services">
               <label>Select Services</label>
               {servicesList.map((service) => (
                 <div key={service}>
@@ -145,19 +162,30 @@ const BookComponent = () => {
               <p>{services.join(", ") || "No service selected"}</p>
             </div>
 
-            <label>Comments:</label>
-            <textarea name="comment" value={comment} onChange={handleChangeComment} placeholder="add details of the car's problems" />
+            <div className="comment">
+              <label>Comments:</label>
+              <textarea name="comment" value={comment} onChange={handleChangeComment} placeholder="add details of the car's problems" />
+            </div>
 
-            <label>Date:</label>
-            <input type="date" name="date" value={date} onChange={handleChangeDate} required />
+            <div className="dateandtime">
+              <div className="date">
+                <label>Date:</label>
+                <input type="date" name="date" value={date} onChange={handleChangeDate} required />
+              </div>
 
-            <label>Time:</label>
-            <input type="time" name="time" value={time} onChange={handleChangeTime} required />
+              <div className="time">
+                <label>Time:</label>
+                <input type="time" name="time" value={time} onChange={handleChangeTime} required />
+              </div>
+            </div>
 
-            <button type="submit">Book</button>
+            <div className="button">
+              <button type="submit">Book</button>
+            </div>
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

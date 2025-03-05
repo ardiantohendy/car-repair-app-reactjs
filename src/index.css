@@ -495,15 +495,14 @@ body .footer img {
 
 body .bookContainer {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 5rem 3rem;
+  padding: 10rem 3rem 5rem 3rem;
 }
 
 .bookContainer .left {
   width: 35%;
-  height: 100%;
   padding: 0 3rem;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/image/bookleft.jpg);
   background-position: center;
@@ -528,8 +527,99 @@ body .bookContainer {
 
 .bookContainer .right {
   width: 60%;
+  height: 100%;
 }
 
+.bookContainer .right form {
+  display: flex;
+  width: 100%;
+  padding: 0 5rem 0 0;
+  flex-direction: column;
+}
+
+.bookContainer .right form .name input {
+  width: 100%;
+}
+
+.bookContainer .right form .phoneandemail {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+.bookContainer .right form .phoneandemail div {
+  width: 48%;
+}
+
+.bookContainer .right form .phoneandemail input {
+  width: 100%;
+}
+
+.bookContainer .right form .brand {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookContainer .right form .brand select {
+  width: 100%;
+}
+
+.bookContainer .right form .modelandnumber {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bookContainer .right form .modelandnumber div {
+  width: 48%;
+}
+
+.bookContainer .right form .modelandnumber input {
+  width: 100%;
+}
+
+.bookContainer .right form .services {
+  margin: 0.5rem 0;
+}
+
+.bookContainer .right form .comment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookContainer .right form .comment textarea {
+  height: 6rem;
+}
+
+.bookContainer .right form .dateandtime {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bookContainer .right form .dateandtime div {
+  width: 48%;
+}
+
+.bookContainer .right form .dateandtime input {
+  width: 100%;
+}
+
+.bookContainer .right form .button {
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.bookContainer .right form .button button {
+  width: 30%;
+  height: 2.5rem;
+}
 /* 
 
 .container {
