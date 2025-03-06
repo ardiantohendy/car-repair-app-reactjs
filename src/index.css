@@ -539,6 +539,8 @@ body .bookContainer {
 
 .bookContainer .right form .name input {
   width: 100%;
+  height: 2.3rem;
+  padding: 0.5rem;
 }
 
 .bookContainer .right form .phoneandemail {
@@ -554,6 +556,8 @@ body .bookContainer {
 
 .bookContainer .right form .phoneandemail input {
   width: 100%;
+  height: 2.3rem;
+  padding: 0.5rem;
 }
 
 .bookContainer .right form .brand {
@@ -564,6 +568,8 @@ body .bookContainer {
 
 .bookContainer .right form .brand select {
   width: 100%;
+  height: 2.3rem;
+  padding: 0.5rem;
 }
 
 .bookContainer .right form .modelandnumber {
@@ -579,6 +585,8 @@ body .bookContainer {
 
 .bookContainer .right form .modelandnumber input {
   width: 100%;
+  height: 2.3rem;
+  padding: 0.5rem;
 }
 
 .bookContainer .right form .services {
@@ -593,6 +601,7 @@ body .bookContainer {
 
 .bookContainer .right form .comment textarea {
   height: 6rem;
+  padding: 0.5rem;
 }
 
 .bookContainer .right form .dateandtime {
@@ -608,18 +617,72 @@ body .bookContainer {
 
 .bookContainer .right form .dateandtime input {
   width: 100%;
+  height: 2.3rem;
+  padding: 0.5rem;
 }
 
 .bookContainer .right form .button {
   width: 100%;
   text-align: center;
-  margin: 0.5rem 0;
+  margin: 1rem 0 0 0;
 }
 
 .bookContainer .right form .button button {
   width: 30%;
   height: 2.5rem;
 }
+
+.bookContainer .right h3 {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.bookContainer .right form label {
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.bookContainer .right form .services div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bookContainer .right form .services input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.2rem 0.2rem 0.2rem 0;
+  accent-color: rgb(49, 49, 49);
+}
+
+.bookContainer .right form .services label.exp {
+  font-size: 0.7em;
+}
+
+.bookContainer .right form .services p {
+  background-color: rgb(49, 49, 49);
+  padding: 0.5rem;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.bookContainer .right form button {
+  background-color: orange;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.bookContainer .right form button:hover {
+  background-color: rgb(49, 49, 49);
+  color: white;
+}
+
+/* .bookContainer .right form input {
+  
+} */
+
 /* 
 
 .container {

@@ -7,7 +7,7 @@ const Header = () => {
       <div className="list">
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a onClick={() => navigate("/")}>Home</a>
           </li>
           <li>
             <a href="#">About</a>
@@ -16,7 +16,7 @@ const Header = () => {
             <a href="#">Services</a>
           </li>
           <li>
-            {/* UNTUK ROUTER TAG A PERLU DIGANTI KE BUTTON */}
+            {/* UNTUK ROUTER TAG A PERLU DIGANTI KE BUSTTON */}
             <a onClick={() => navigate("/book")}>Book</a>
           </li>
           <li>

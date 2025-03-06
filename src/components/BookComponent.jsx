@@ -101,7 +101,7 @@ const BookComponent = () => {
           </p>
         </div>
         <div className="right">
-          <h3>Please Fill all These Forms</h3>
+          <h3>Input Data</h3>
           <form onSubmit={handleSubmit}>
             <div className="name">
               <label>Name:</label>
@@ -150,15 +150,15 @@ const BookComponent = () => {
             </div>
 
             <div className="services">
-              <label>Select Services</label>
+              <label>Select Services:</label>
               {servicesList.map((service) => (
                 <div key={service}>
                   <input type="checkbox" value={service} checked={services.includes(service)} onChange={handleChangeService} />
-                  <label>{service}</label>
+                  <label className="exp">{service}</label>
                 </div>
               ))}
 
-              <p>Selected Services:</p>
+              <label>Selected Services:</label>
               <p>{services.join(", ") || "No service selected"}</p>
             </div>
 
