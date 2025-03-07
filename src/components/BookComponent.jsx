@@ -1,10 +1,11 @@
+import axios from "axios";
 import { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
 const BookComponent = () => {
   const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState();
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
@@ -14,79 +15,54 @@ const BookComponent = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
-  const handleChangeName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleChangePhone = (e) => {
-    setPhoneNumber(e.target.value);
-  };
-
-  const handleChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleChangeBrand = (e) => {
-    setBrand(e.target.value);
-  };
-
-  const handleChangeModel = (e) => {
-    setModel(e.target.value);
-  };
-
-  const handleChangeCarNumber = (e) => {
-    setCarNumber(e.target.value);
-  };
-
-  const servicesList = ["Engine Upgrade", "Inspection Service", "Engine Repair", "Body Repair", "Electricity Repair", "Tire Repair"];
-
   const handleChangeService = (event) => {
     const { value, checked } = event.target;
-
     setServices((prev) => (checked ? [...prev, value] : prev.filter((service) => service !== value)));
   };
 
-  const handleChangeComment = (e) => {
-    setComment(e.target.value);
-  };
-
-  const handleChangeDate = (e) => {
-    setDate(e.target.value);
-  };
-
-  const handleChangeTime = (e) => {
-    setTime(e.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(); // Mencegah reload halaman
 
-    // Menampilkan data di console (bisa diganti dengan API call)
-    console.log("Form Data:", {
+    const formData = {
       name,
-      phoneNumber,
+      phone_number: phoneNumber,
       email,
       brand,
       model,
-      carNumber,
+      car_number: carNumber,
       services,
       comment,
       date,
       time,
-    });
+    };
 
-    alert("Booking submitted successfully!");
+    try {
+      const token = localStorage.getItem("token"); // Ambil token dari localStorage jika ada
+      const response = await axios.post("http://127.0.0.1:8000/add/", formData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    setName("");
-    setPhoneNumber("");
-    setEmail("");
-    setBrand("");
-    setModel("");
-    setCarNumber("");
-    setServices([]); // Karena ini array, reset dengan []
-    setComment("");
-    setDate("");
-    setTime("");
+      console.log("Booking berhasil:", response.data);
+      alert("Booking berhasil!");
+
+      // Reset form setelah submit
+      setName("");
+      setPhoneNumber("");
+      setEmail("");
+      setBrand("");
+      setModel("");
+      setCarNumber("");
+      setServices([]);
+      setComment("");
+      setDate("");
+      setTime("");
+    } catch (error) {
+      console.error("Gagal membuat booking:", error.response ? error.response.data : error);
+      alert("Terjadi kesalahan saat booking.");
+    }
   };
 
   return (
@@ -105,24 +81,22 @@ const BookComponent = () => {
           <form onSubmit={handleSubmit}>
             <div className="name">
               <label>Name:</label>
-              <input type="text" name="name" value={name} onChange={handleChangeName} required />
+              <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
             </div>
-
             <div className="phoneandemail">
               <div>
                 <label>Phone Number:</label>
-                <input type="text" name="phoneNumber" value={phoneNumber} onChange={handleChangePhone} required />
+                <input type="text" name="phoneNumber" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
               </div>
 
               <div>
                 <label>Email:</label>
-                <input type="text" name="email" value={email} onChange={handleChangeEmail} required />
+                <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
             </div>
-
             <div className="brand">
               <label>Brand:</label>
-              <select name="brand" value={brand} onChange={handleChangeBrand} required>
+              <select name="brand" value={brand} onChange={(e) => setBrand(e.target.value)} required>
                 <option value="">Select Your Car Brand</option>
                 <option value="Toyota">Toyota</option>
                 <option value="Daihatsu">Daihatsu</option>
@@ -136,46 +110,40 @@ const BookComponent = () => {
                 <option value="Mercedes">Mercedes</option>
               </select>
             </div>
-
             <div className="modelandnumber">
-              <div className="model">
+              <div>
                 <label>Model:</label>
-                <input type="text" name="model" value={model} onChange={handleChangeModel} required />
+                <input type="text" name="model" value={model} onChange={(e) => setModel(e.target.value)} required />
               </div>
-
-              <div className="carNumber">
+              <div>
                 <label>Car Number:</label>
-                <input type="text" name="carNumber" value={carNumber} onChange={handleChangeCarNumber} required />
+                <input type="text" name="carNumber" value={carNumber} onChange={(e) => setCarNumber(e.target.value)} required />
               </div>
             </div>
 
             <div className="services">
               <label>Select Services:</label>
-              {servicesList.map((service) => (
+              {["Engine Upgrade", "Inspection Service", "Engine Repair", "Body Repair", "Electricity Repair", "Tire Repair"].map((service) => (
                 <div key={service}>
                   <input type="checkbox" value={service} checked={services.includes(service)} onChange={handleChangeService} />
                   <label className="exp">{service}</label>
                 </div>
               ))}
-
               <label>Selected Services:</label>
               <p>{services.join(", ") || "No service selected"}</p>
             </div>
-
             <div className="comment">
               <label>Comments:</label>
-              <textarea name="comment" value={comment} onChange={handleChangeComment} placeholder="add details of the car's problems" />
+              <textarea name="comment" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Describe issues..." />
             </div>
-
             <div className="dateandtime">
-              <div className="date">
+              <div>
                 <label>Date:</label>
-                <input type="date" name="date" value={date} onChange={handleChangeDate} required />
+                <input type="date" name="date" value={date} onChange={(e) => setDate(e.target.value)} required />
               </div>
-
-              <div className="time">
+              <div>
                 <label>Time:</label>
-                <input type="time" name="time" value={time} onChange={handleChangeTime} required />
+                <input type="time" name="time" value={time} onChange={(e) => setTime(e.target.value)} required />
               </div>
             </div>
 
