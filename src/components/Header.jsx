@@ -20,12 +20,10 @@ const Header = () => {
             <a onClick={() => navigate("/book")}>Book</a>
           </li>
           <li>
-            <a className="log" href="#">
-              Log In
-            </a>
+            <a className="log">Log In</a>
           </li>
           <li>
-            <a className="reg" href="#">
+            <a className="reg" onClick={() => navigate("/register")}>
               Sign Up
             </a>
           </li>
