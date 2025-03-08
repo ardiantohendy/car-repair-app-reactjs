@@ -20,7 +20,9 @@ const Header = () => {
             <a onClick={() => navigate("/book")}>Book</a>
           </li>
           <li>
-            <a className="log">Log In</a>
+            <a className="log" onClick={() => navigate("/login")}>
+              Log In
+            </a>
           </li>
           <li>
             <a className="reg" onClick={() => navigate("/register")}>

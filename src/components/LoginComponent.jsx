@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
-
-const RegisterComponent = () => {
+const LoginComponent = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="register">
+      <div className="login">
         <div className="container">
           <h2>Welcome To Doctor Car</h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam earum, atque facilis assumenda rem adipisci cumque dolores? Exercitationem, iste tempora?</p>
@@ -13,24 +12,16 @@ const RegisterComponent = () => {
               <label>Username:</label>
               <input type="text" name="username" /> {/* need value and onChange */}
             </div>
-            <div className="email">
-              <label>Email:</label>
-              <input type="email" name="email" /> {/* need value and onChange */}
-            </div>
             <div className="password">
               <label>Password:</label>
               <input type="password" name="password" /> {/* need value and onChange */}
             </div>
-            <div className="password">
-              <label>Repeat Password:</label>
-              <input type="password" name="password2" /> {/* need value and onChange */}
-            </div>
             <div className="button">
-              <button type="submit">Sign Up</button>
+              <button type="submit">Log in</button>
             </div>
           </form>
-          <p className="alre">
-            Already have an account? <a onClick={() => navigate("/login")}>login</a> instead
+          <p className="donthave">
+            Do not have any account yet? <a onClick={() => navigate("/register")}>register</a> instead
           </p>
         </div>
       </div>
@@ -38,4 +29,4 @@ const RegisterComponent = () => {
   );
 };
 
-export default RegisterComponent;
+export default LoginComponent;
