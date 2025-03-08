@@ -26,8 +26,9 @@ const RegisterComponent = () => {
               <button type="submit">Register</button>
             </div>
           </form>
-          <p>Already have an account? Login instead</p>
-          <a href="">Login</a>
+          <p className="alre">
+            Already have an account? <a href="">login</a> instead
+          </p>
         </div>
       </div>
     </>
