@@ -37,11 +37,11 @@ const BookComponent = () => {
     };
 
     try {
-      const token = localStorage.getItem("token"); // Ambil token dari localStorage jika ada
+      const access = localStorage.getItem("access"); // Ambil access dari localStorage jika ada
       const response = await axios.post("http://127.0.0.1:8000/add/", formData, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${access}`,
         },
       });
 

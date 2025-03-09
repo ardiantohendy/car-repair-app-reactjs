@@ -13,7 +13,9 @@ const LoginComponent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(user);
+      const response = await login(user);
+      localStorage.setItem("access", response.data.access);
+      localStorage.setItem("refresh", response.data.refresh);
       alert("Log in successful!");
       setUser({
         username: "",
