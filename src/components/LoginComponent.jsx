@@ -43,6 +43,7 @@ const LoginComponent = () => {
             </div>
             <div className="button">
               <button type="submit">Log in</button>
+              <button onClick={() => navigate("/")}>Log in as a guest</button>
             </div>
           </form>
           <p className="donthave">

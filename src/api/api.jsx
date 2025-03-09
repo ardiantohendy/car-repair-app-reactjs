@@ -11,5 +11,5 @@ export const login = async (userData) => {
 };
 
 export const logout = async (refreshToken) => {
-  return await axios.post(API_URL, "logout/", { refresh: refreshToken });
+  return await axios.post(API_URL + "logout/", { refresh: refreshToken });
 };

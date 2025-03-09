@@ -735,10 +735,15 @@ body .login {
   margin-bottom: 0.5rem;
 }
 
-.register .container form .button,
-.login .container form .button {
+.register .container form .button {
   display: flex;
   align-items: center;
+}
+
+.login .container form .button {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .register .container form button,
@@ -749,7 +754,7 @@ body .login {
   cursor: pointer;
   transition: 0.2s;
   height: 2rem;
-  width: 30%;
+  width: 45%;
   margin: 1rem 0;
 }
 

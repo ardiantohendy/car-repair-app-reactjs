@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { logout } from "../api/api";
 const Header = () => {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -12,6 +13,18 @@ const Header = () => {
       setIsAuthenticated(false);
     }
   }, []);
+
+  const handleLogOut = async () => {
+    try {
+      await logout(localStorage.getItem("refresh"));
+      localStorage.removeItem("access");
+      localStorage.removeItem("refresh");
+      alert("Logged out successfully!");
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout Failed!", error);
+    }
+  };
 
   return (
     <header>
@@ -32,7 +45,9 @@ const Header = () => {
           </li>
           {isAuthenticated ? (
             <li>
-              <a className="reg">Log Out</a>
+              <a className="reg" onClick={handleLogOut}>
+                Log Out
+              </a>
             </li>
           ) : (
             <>
