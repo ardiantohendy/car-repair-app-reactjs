@@ -15,6 +15,13 @@ const RegisterComponent = () => {
     try {
       await register(user);
       alert("Registration successful!");
+      setUser({
+        username: "",
+        email: "",
+        password: "",
+        password2: "",
+      });
+      navigate("/login");
     } catch (error) {
       console.log("Registration failed", error);
     }
@@ -29,19 +36,19 @@ const RegisterComponent = () => {
           <form onSubmit={handleSubmit}>
             <div className="username">
               <label>Username:</label>
-              <input type="text" name="username" placeholder="Username" onChange={handleChange} /> {/* need value and onChange */}
+              <input type="text" name="username" placeholder="Username" value={user.username} onChange={handleChange} /> {/* need value and onChange */}
             </div>
             <div className="email">
               <label>Email:</label>
-              <input type="email" name="email" placeholder="Email" onChange={handleChange} /> {/* need value and onChange */}
+              <input type="email" name="email" placeholder="Email" value={user.email} onChange={handleChange} /> {/* need value and onChange */}
             </div>
             <div className="password">
               <label>Password:</label>
-              <input type="password" name="password" placeholder="Password" onChange={handleChange} /> {/* need value and onChange */}
+              <input type="password" name="password" placeholder="Password" value={user.password} onChange={handleChange} /> {/* need value and onChange */}
             </div>
             <div className="password">
               <label>Repeat Password:</label>
-              <input type="password" name="password2" placeholder="Repeat Password" onChange={handleChange} /> {/* need value and onChange */}
+              <input type="password" name="password2" placeholder="Repeat Password" value={user.password2} onChange={handleChange} /> {/* need value and onChange */}
             </div>
             <div className="button">
               <button type="submit">Sign Up</button>

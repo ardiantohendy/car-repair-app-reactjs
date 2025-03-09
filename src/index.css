@@ -753,6 +753,12 @@ body .login {
   margin: 1rem 0;
 }
 
+.register .container form button:hover,
+.login .container form button:hover {
+  background-color: white;
+  color: rgb(24, 24, 24);
+}
+
 .register .container p.alre,
 .login .container p.donthave {
   margin: 0;
