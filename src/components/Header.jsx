@@ -40,9 +40,19 @@ const Header = () => {
           <li>
             <a href="#">Services</a>
           </li>
+          {isAuthenticated ? (
+            <li>
+              <a onClick={() => navigate("/book")}>Book</a>
+            </li>
+          ) : (
+            <li>
+              <a onClick={() => navigate("/login")}>Book</a>
+            </li>
+          )}
           <li>
-            <a onClick={() => navigate("/book")}>Book</a>
+            <a onClick={() => navigate("/queue")}>Queue</a>
           </li>
+
           {isAuthenticated ? (
             <li>
               <a className="reg" onClick={handleLogOut}>

@@ -27,6 +27,11 @@ body header .logo {
   font-family: sans-serif;
 }
 
+body header .list ul {
+  display: flex;
+  align-items: center;
+}
+
 body header .list ul li {
   display: inline-block;
   margin: 0 0.5rem;

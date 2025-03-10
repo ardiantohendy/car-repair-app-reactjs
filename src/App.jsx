@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Book from "./pages/Book";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Queue from "./pages/Queue";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/book" element={<Book />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/queue" element={<Queue />} />
       </Routes>
     </Router>
   );

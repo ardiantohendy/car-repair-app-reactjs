@@ -1,7 +1,19 @@
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 const MainPage = () => {
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("access");
+    if (token) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, []);
+
   return (
     <>
       <div className="homePage">
@@ -17,9 +29,16 @@ const MainPage = () => {
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto aperiam exercitationem facilis Lorem ipsum dolor sit amet.</p>
             </div>
             <div className="btn">
-              <button className="bookBtn" onClick={() => navigate("/book")}>
-                Book Now
-              </button>
+              {isAuthenticated ? (
+                <button className="bookBtn" onClick={() => navigate("/book")}>
+                  Book Now
+                </button>
+              ) : (
+                <button className="bookBtn" onClick={() => navigate("/login")}>
+                  Book Now
+                </button>
+              )}
+
               <button>Learn More</button>
             </div>
           </div>
